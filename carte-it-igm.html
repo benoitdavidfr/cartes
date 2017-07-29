@@ -20,20 +20,19 @@ var wmtsurl = 'https://wxs.ign.fr/pratique/geoportail/wmts?'
             + 'service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&'
             + 'tilematrix={z}&tilecol={x}&tilerow={y}';
 var attrIGN = "&copy; <a href='http://www.ign.fr'>IGN</a>";
-var attrINPN = "&copy; <a href='http://inpn.mnhn.fr'>INPN</a>";
 
 var baseLayers = {
   "Cartes IGN" : new L.TileLayer(
       wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS&format=image/jpeg&style=normal',
-      {"format":"image/jpeg","minZoom":0,"maxZoom":18,"detectRetina":detectRetina,"attribution":attrIGN}
+      {"format":"image/jpeg","minZoom":0,"maxZoom":18,"attribution":attrIGN}
   ),
   "Ortho-images" : new L.TileLayer(
       wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS&format=image/jpeg&style=normal',
-      {"format":"image/jpeg","minZoom":0,"maxZoom":20,"detectRetina":detectRetina,"attribution":attrIGN}
+      {"format":"image/jpeg","minZoom":0,"maxZoom":20,"attribution":attrIGN}
   ),
   "OSM" : new L.TileLayer(
       'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-      { "format":"image/jpeg","minZoom":0,"maxZoom":19,"detectRetina":detectRetina,
+      { "format":"image/jpeg","minZoom":0,"maxZoom":19,
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}
   )
 };
