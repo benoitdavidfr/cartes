@@ -42,20 +42,28 @@ map.addLayer(baseLayers["Cartes IGN"]);
 var overlays = {
   "carte IT-IGM 1/250k zone 32" : new L.tileLayer.wms(
       'http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/IGM_250000.map&',
-      { "version":"1.3.0","layers":"CB.IGM250000.32","format":"image/jpeg", "minZoom":11,"maxZoom":16,}
+      { "version":"1.3.0","layers":"CB.IGM250000.32","format":"image/jpeg", "minZoom":11,"maxZoom":16}
   ),
   "carte IT-IGM 1/250k zone 33" : new L.tileLayer.wms(
       'http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/IGM_250000.map&',
-      { "version":"1.3.0","layers":"CB.IGM250000.33","format":"image/jpeg", "minZoom":11,"maxZoom":16,}
+      { "version":"1.3.0","layers":"CB.IGM250000.33","format":"image/jpeg", "minZoom":11,"maxZoom":16}
   ),
-
+  "carte IT-IGM 1/100k zone 32" : new L.tileLayer.wms(
+      'http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/IGM_100000.map&',
+      { "version":"1.3.0","layers":"MB.IGM100000.32","format":"image/jpeg", "minZoom":11,"maxZoom":19}
+  ),
+  "carte IT-IGM 1/25k zone 32" : new L.tileLayer.wms(
+      'http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/IGM_25000.map&',
+      { "version":"1.3.0","layers":"CB.IGM25000.32","format":"image/jpeg", "minZoom":11,"maxZoom":21}
+  ),
+  
 // affichage d'une couche debug
   "debug" : new L.TileLayer(
     'http://visu.gexplor.fr/utilityserver.php/debug/{z}/{x}/{y}.png',
     {"format":"image/png","minZoom":0,"maxZoom":21,"detectRetina":false}
   )
 };
-
+  
 <!-- ajout de l outil de sélection de couche -->
 L.control.layers(baseLayers, overlays).addTo(map);
 
