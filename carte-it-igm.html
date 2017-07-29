@@ -40,10 +40,15 @@ var baseLayers = {
 map.addLayer(baseLayers["Cartes IGN"]);
 
 var overlays = {
-  "CB.IGM250000.32" : new L.tileLayer.wms(
+  "carte IT-IGM 1/250k zone 32" : new L.tileLayer.wms(
       'http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/IGM_250000.map&',
       { "version":"1.3.0","layers":"CB.IGM250000.32","format":"image/jpeg", "minZoom":11,"maxZoom":16,}
   ),
+  "carte IT-IGM 1/250k zone 33" : new L.tileLayer.wms(
+      'http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/IGM_250000.map&',
+      { "version":"1.3.0","layers":"CB.IGM250000.33","format":"image/jpeg", "minZoom":11,"maxZoom":16,}
+  ),
+
 // affichage d'une couche debug
   "debug" : new L.TileLayer(
     'http://visu.gexplor.fr/utilityserver.php/debug/{z}/{x}/{y}.png',
