@@ -44,6 +44,11 @@ var overlays = {
       'http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/IGM_250000.map&',
       { "version":"1.3.0","layers":"CB.IGM250000.32","format":"image/jpeg"}
   ),
+// affichage d'une couche debug
+  "debug" : new L.TileLayer(
+    'http://visu.gexplor.fr/utilityserver.php/debug/{z}/{x}/{y}.png',
+    {"format":"image/png","minZoom":0,"maxZoom":21,"detectRetina":false}
+  )
 };
 
 <!-- ajout de l outil de sélection de couche -->
