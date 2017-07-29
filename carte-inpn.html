@@ -9,22 +9,12 @@
 <!-- styles et src de Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.0/dist/leaflet.js"></script>
-<!-- Include the edgebuffer plugin -->
-    <script src="https://visu.gexplor.fr/lib/leaflet.edgebuffer.js"></script>
-<!-- Include the Control.Coordinates plugin -->
-    <link rel="stylesheet" href="Control.Coordinates.css" />
-    <script src="Control.Coordinates.js"></script>
   </head>
   <body>
     <div id="map" style="height: 100%; width: 100%"></div>
     <script>
 var map = L.map('map').setView([48, 3], 8); // view pour la zone
 L.control.scale({position:'bottomleft', metric:true, imperial:false}).addTo(map);
-var c = new L.Control.Coordinates();
-c.addTo(map);
-map.on('click', function(e) {
-	c.setCoordinates(e);
-});
 
 var wmtsurl = 'https://wxs.ign.fr/pratique/geoportail/wmts?'
             + 'service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&'
