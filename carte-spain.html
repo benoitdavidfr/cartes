@@ -24,11 +24,11 @@ var attrIGN = "&copy; <a href='http://www.ign.fr'>IGN</a>";
 var attrINPN = "&copy; <a href='http://inpn.mnhn.fr'>INPN</a>";
 
 var baseLayers = {
-  "Cartes IGN" : new L.TileLayer.wms(
+  "Cartes IGN" : new L.tileLayer.wms(
       'http://www.ign.es/wms-inspire/mapa-raster?',
       { "version":"1.3.0", "layers":"mtn_rasterizado", "detectRetina":detectRetina, "attribution": "IGN" }
   ),
-  "Fond IGN" : new L.TileLayer.wms(
+  "Fond IGN" : new L.tileLayer.wms(
       'http://www.ign.es/wms-inspire/mapa-raster?',
       { "version":"1.3.0", "layers":"fondo", "format":"image/png", "detectRetina":detectRetina, "attribution": "IGN" }
   ),
