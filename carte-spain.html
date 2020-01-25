@@ -24,13 +24,13 @@ var attrIGN = "&copy; <a href='http://www.ign.fr'>IGN</a>";
 var attrINPN = "&copy; <a href='http://inpn.mnhn.fr'>INPN</a>";
 
 var baseLayers = {
-  "Cartes IGN" : new L.TileLayer(
-      wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS&format=image/jpeg&style=normal',
-      {"format":"image/jpeg","minZoom":0,"maxZoom":18,"detectRetina":detectRetina,"attribution":attrIGN}
+  "Cartes IGN" : new L.TileLayer.wms(
+      'http://www.ign.es/wms-inspire/mapa-raster?',
+      { "version":"1.3.0", "layers":"mtn_rasterizado", "detectRetina":detectRetina, "attribution": "IGN" }
   ),
-  "Ortho-images" : new L.TileLayer(
-      wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS&format=image/jpeg&style=normal',
-      {"format":"image/jpeg","minZoom":0,"maxZoom":20,"detectRetina":detectRetina,"attribution":attrIGN}
+  "Fond IGN" : new L.TileLayer.wms(
+      'http://www.ign.es/wms-inspire/mapa-raster?',
+      { "version":"1.3.0", "layers":"fondo", "format":"image/png", "detectRetina":detectRetina, "attribution": "IGN" }
   ),
   "OSM" : new L.TileLayer(
       'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
@@ -46,10 +46,6 @@ var baseLayers = {
 map.addLayer(baseLayers["Cartes IGN"]);
 
 var overlays = {
-  "Parcs nationaux" : new L.tileLayer.wms('http://ws.carmencarto.fr/WMS/119/fxx_inpn?',
-  { "version":"1.3.0","layers":"Parcs_nationaux","format":"image/png","transparent":true,
-    "detectRetina":detectRetina, "attribution":attrINPN }
-  ),
   "Réserves naturelles nationales" : new L.tileLayer.wms('http://ws.carmencarto.fr/WMS/119/fxx_inpn?',
   {"version":"1.3.0","layers":"Reserves_naturelles_nationales","format":"image/png","transparent":true,
     "detectRetina":detectRetina, "attribution":attrINPN}
