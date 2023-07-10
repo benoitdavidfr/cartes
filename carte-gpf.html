@@ -24,9 +24,9 @@ var attrIGN = "&copy; <a href='http://www.ign.fr'>IGN</a>";
 var attrINPN = "&copy; <a href='http://inpn.mnhn.fr'>INPN</a>";
 
 var baseLayers = {
-  "Cartes IGN" : new L.TileLayer(
-      wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS&format=image/jpeg&style=normal',
-      {"format":"image/jpeg","minZoom":0,"maxZoom":18,"detectRetina":detectRetina,"attribution":attrIGN}
+  "Plan IGN" : new L.TileLayer(
+      wmtsurl + '&layer=PLAN-IGN_PNG&format=image/png&style=normal',
+      {"format":"image/png","minZoom":0,"maxZoom":18,"detectRetina":detectRetina,"attribution":attrIGN}
   ),
   "Ortho-images" : new L.TileLayer(
       wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS&format=image/jpeg&style=normal',
