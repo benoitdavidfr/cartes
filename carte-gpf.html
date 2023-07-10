@@ -38,7 +38,7 @@ var baseLayers = {
 map.addLayer(baseLayers["Plan IGN"]);
 
 var overlays = {
-  "Ortho-images (D90)" : new L.TileLayer(
+  "Ortho D90 WMTS" : new L.TileLayer(
       wmtsurl + '&layer=318602_BDORTHO_PYR-JPG_PM_D090_2020_WL&format=image/jpeg&style=normal',
       {"format":"image/jpeg","minZoom":0,"maxZoom":20,"detectRetina":detectRetina,"attribution":attrIGN}
   ),
@@ -46,14 +46,14 @@ var overlays = {
       wmtsurl + '&layer=321715_BDORTHO_PYR-JPG_PM_D069_2020&format=image/jpeg&style=normal',
       {"format":"image/jpeg","minZoom":0,"maxZoom":20,"detectRetina":detectRetina,"attribution":attrIGN}
   ),
-  "Parcs nationaux" : new L.tileLayer.wms('http://ws.carmencarto.fr/WMS/119/fxx_inpn?',
-  { "version":"1.3.0","layers":"Parcs_nationaux","format":"image/png","transparent":true,
-    "detectRetina":detectRetina, "attribution":attrINPN }
+  "Ortho D90 WMS" : new L.tileLayer.wms('https://wms-r.geopf.fr/rok4/wms?',
+  { "version":"1.3.0","layers":"318602_BDORTHO_PYR-JPG_PM_D090_2020_WL","format":"image/jpeg","transparent":true,
+    "detectRetina":detectRetina, "attribution":attrIGN }
   ),
   "Réserves naturelles nationales" : new L.tileLayer.wms('http://ws.carmencarto.fr/WMS/119/fxx_inpn?',
   {"version":"1.3.0","layers":"Reserves_naturelles_nationales","format":"image/png","transparent":true,
     "detectRetina":detectRetina, "attribution":attrINPN}
-  ),
+  )
 };
 
 <!-- ajout de l outil de sélection de couche -->
