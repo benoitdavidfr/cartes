@@ -32,6 +32,10 @@ var baseLayers = {
       wmtsurl + '&layer=318602_BDORTHO_PYR-JPG_PM_D090_2020_WL&format=image/jpeg&style=normal',
       {"format":"image/jpeg","minZoom":0,"maxZoom":20,"detectRetina":detectRetina,"attribution":attrIGN}
   ),
+  "Ortho-images (D69)" : new L.TileLayer(
+      wmtsurl + '&layer=321715_BDORTHO_PYR-JPG_PM_D069_2020&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":0,"maxZoom":20,"detectRetina":detectRetina,"attribution":attrIGN}
+  ),
   "OSM" : new L.TileLayer(
       'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
       { "format":"image/jpeg","minZoom":0,"maxZoom":19,"detectRetina":detectRetina,
