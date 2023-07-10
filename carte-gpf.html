@@ -26,7 +26,7 @@ var attrINPN = "&copy; <a href='http://inpn.mnhn.fr'>INPN</a>";
 var baseLayers = {
   "Plan IGN" : new L.TileLayer(
       wmtsurl + '&layer=PLAN-IGN_PNG&format=image/png&style=normal',
-      {"format":"image/png","minZoom":0,"maxZoom":18,"detectRetina":detectRetina,"attribution":attrIGN}
+      {"format":"image/png","minZoom":0,"maxZoom":18,"detectRetina":false,"attribution":attrIGN}
   ),
   "OSM" : new L.TileLayer(
       'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
@@ -42,17 +42,13 @@ var overlays = {
       wmtsurl + '&layer=318602_BDORTHO_PYR-JPG_PM_D090_2020_WL&format=image/jpeg&style=normal',
       {"format":"image/jpeg","minZoom":0,"maxZoom":20,"detectRetina":detectRetina,"attribution":attrIGN}
   ),
-  "Ortho-images (D69)" : new L.TileLayer(
+  "Ortho D69 WMTS" : new L.TileLayer(
       wmtsurl + '&layer=321715_BDORTHO_PYR-JPG_PM_D069_2020&format=image/jpeg&style=normal',
       {"format":"image/jpeg","minZoom":0,"maxZoom":20,"detectRetina":detectRetina,"attribution":attrIGN}
   ),
   "Ortho D90 WMS" : new L.tileLayer.wms('https://wms-r.geopf.fr/rok4/wms?',
   { "version":"1.3.0","layers":"318602_BDORTHO_PYR-JPG_PM_D090_2020_WL","format":"image/jpeg","transparent":true,
     "detectRetina":detectRetina, "attribution":attrIGN }
-  ),
-  "Réserves naturelles nationales" : new L.tileLayer.wms('http://ws.carmencarto.fr/WMS/119/fxx_inpn?',
-  {"version":"1.3.0","layers":"Reserves_naturelles_nationales","format":"image/png","transparent":true,
-    "detectRetina":detectRetina, "attribution":attrINPN}
   )
 };
 
