@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>carte INPN</title>
+    <title>carte GPF</title>
     <meta charset="UTF-8">
 <!-- meta nécessaire pour le mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://visu.gexplor.fr/viewer.css">
 <!-- styles et src de Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9/dist/leaflet.js"></script>
   </head>
   <body>
     <div id="map" style="height: 100%; width: 100%"></div>
@@ -16,7 +16,7 @@
 var map = L.map('map').setView([48, 3], 8); // view pour la zone
 L.control.scale({position:'bottomleft', metric:true, imperial:false}).addTo(map);
 
-var wmtsurl = 'https://wxs.ign.fr/pratique/geoportail/wmts?'
+var wmtsurl = 'https://wmts.geopf.fr/rok4/wmts?'
             + 'service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&'
             + 'tilematrix={z}&tilecol={x}&tilerow={y}';
 var detectRetina = true;
