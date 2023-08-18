@@ -26,12 +26,12 @@ var attrINPN = "&copy; <a href='http://inpn.mnhn.fr'>INPN</a>";
 var baseLayers = {
   "OSM" : new L.TileLayer(
       'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
-      { "format":"image/jpeg","minZoom":0,"maxZoom":19,"detectRetina":detectRetina,
+      { "format":"image/png","minZoom":0,"maxZoom":19,"detectRetina":detectRetina,
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}
   ),
   "Shom" : new L.TileLayer(
-      'https://geoapi.fr/shomgt/{z}/{x}/{y}.png',
-      { "format":"image/jpeg","minZoom":0,"maxZoom":19,"detectRetina":false,
+      'https://geoapi.fr/shomgt/tile.php/gtpyr/{z}/{x}/{y}.png',
+      { "format":"image/png","minZoom":0,"maxZoom":19,"detectRetina":false,
         attribution: '&copy; <a href="http://www.shom.fr/">Shom</a>'}
   )
 };
