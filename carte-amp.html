@@ -71,7 +71,10 @@ var overlays = {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureZee
   }),
  
-  "Parcs nationaux" : new L.tileLayer.wms('https://geoapi.fr/shomgt/view/wmsv.php',
+  "Parcs nationaux (GeoJSON)" : new L.GeoJSON.AJAX(shomgturl+'geojson/amp/amp-pn.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureZee
+  }),
+  "Parcs nationaux (WMS)" : new L.tileLayer.wms('https://geoapi.fr/shomgt/view/wmsv.php',
   { "version":"1.3.0","layers":"amp-pn","format":"image/png","transparent":true,
     "detectRetina":detectRetina, "attribution":'&copy; <a href="http://www.ofb.fr/">OFB</a>' }
   ),
