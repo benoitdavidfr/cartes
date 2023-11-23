@@ -73,14 +73,14 @@ var baseLayers = {
 map.addLayer(baseLayers["Shom"]);
 
 var overlays = {
-  "Délim. maritimes (Shom)" : new L.GeoJSON.AJAX(shomgturl+'geojson/delmar.geojson', {
+  "Délim. maritimes (Shom)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/delmar.geojson', {
     style: { color: 'SteelBlue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureDelmar
   }),
-  "ZEE simplifiée" : new L.GeoJSON.AJAX(shomgturl+'geojson/frzee.geojson', {
+  "ZEE simplifiée" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/frzee.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureZee
   }),
  
-  "Parcs nationaux (GeoJSON)" : new L.GeoJSON.AJAX(shomgturl+'geojson/amp/amp-pn.geojson', {
+  "Parcs nationaux (GeoJSON)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pn.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureZee
   }),
   "Parcs nationaux (WMS)" : new L.tileLayer.wms('https://geoapi.fr/shomgt/view/wmsv.php',
