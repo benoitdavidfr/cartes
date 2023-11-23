@@ -43,9 +43,9 @@ var overlays = {
   { "version":"1.3.0","layers":"pn","format":"image/png","transparent":true,
     "detectRetina":detectRetina, "attribution":'&copy; <a href="http://www.ofb.fr/">OFB</a>' }
   ),
-  "Réserves naturelles nationales" : new L.tileLayer.wms('http://ws.carmencarto.fr/WMS/119/fxx_inpn?',
-  {"version":"1.3.0","layers":"Reserves_naturelles_nationales","format":"image/png","transparent":true,
-    "detectRetina":detectRetina, "attribution":attrINPN}
+  "Réserves naturelles nationales" : new L.tileLayer.wms('https://geoapi.fr/shomgt/view/wmsv.php',
+  {"version":"1.3.0","layers":"rnn","format":"image/png","transparent":true,
+    "detectRetina":detectRetina, "attribution":'&copy; <a href="http://www.ofb.fr/">OFB</a>'}
   ),
 };
 
