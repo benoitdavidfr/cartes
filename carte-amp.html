@@ -40,11 +40,11 @@ map.addLayer(baseLayers["Shom"]);
 
 var overlays = {
   "Parcs nationaux" : new L.tileLayer.wms('https://geoapi.fr/shomgt/view/wmsv.php',
-  { "version":"1.3.0","layers":"pn","format":"image/png","transparent":true,
+  { "version":"1.3.0","layers":"amp-pn","format":"image/png","transparent":true,
     "detectRetina":detectRetina, "attribution":'&copy; <a href="http://www.ofb.fr/">OFB</a>' }
   ),
   "Réserves naturelles nationales" : new L.tileLayer.wms('https://geoapi.fr/shomgt/view/wmsv.php',
-  {"version":"1.3.0","layers":"rnn","format":"image/png","transparent":true,
+  {"version":"1.3.0","layers":"amp-rnn","format":"image/png","transparent":true,
     "detectRetina":detectRetina, "attribution":'&copy; <a href="http://www.ofb.fr/">OFB</a>'}
   ),
 };
