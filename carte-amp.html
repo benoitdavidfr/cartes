@@ -89,51 +89,6 @@ var overlays = {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureZee
   }),
  
-  "Parcs nationaux (GeoJSON)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pn.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureZee
-  }),
-  "Aire de gestion des habitats ou des espèces (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-aghe.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Aire de gestion durable des ressources (Nouvelle-Calédonie, Province Nord)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pfn-agdr.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Aire de gestion durable des ressources (Nouvelle-Calédonie, Province Sud)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pfs-agdr.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Aire de protection de biotope" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-apb.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Aire de repos des cétacés de plan de gestion de l'espace maritime (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-arcpgem.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Aire marine protégée de plan de gestion de l'espace maritime (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-amppgem.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Aire protégée de ressources naturelles gérées (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-aprng.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Aire spécialement protégée d'importance méditerranéenne" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-aspim.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Bien inscrit sur la liste du patrimoine mondial" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-bipm.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Bien inscrit sur la liste du patrimoine mondial (zone coeur)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-bipm-c.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Bien inscrit sur la liste du patrimoine mondial (zone tampon)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-bipm-t.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Domaine public maritime (Conservatoire du littoral)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-cl-dpm.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Domaine public maritime attribué (Conservatoire du littoral)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-cl-dpma.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Monument naturel (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-mn.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
   "Parc national" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pn.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
@@ -146,67 +101,10 @@ var overlays = {
   "Parc national (coeur)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pn-c.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
-  "Parc naturel (Nouvelle-Calédonie)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-nc-pn.geojson', {
+  "Domaine public maritime (Conservatoire du littoral)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-cl-dpm.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
-  "Parc naturel marin" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pnm.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Parc provincial (Nouvelle-Calédonie, Province Nord)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncn-pp.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Parc provincial (Nouvelle-Calédonie, Province Sud)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncs-pp.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Paysage naturel protégé (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-pnp.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Plan de gestion de l'espace maritime (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-pgem.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Périmètre de protection de réserve naturelle intégrale (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-pprni.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve de biosphère" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rb.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve de biosphère (zone centrale)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rb-c.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve de biosphère (zone de transition)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rb-tr.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve de biosphère (zone tampon)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rb-ta.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve de nature sauvage (Nouvelle-Calédonie, Province Nord)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncn-rns.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve intégrale (Nouvelle-Calédonie)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-nc-ri.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve nationale de chasse et de faune sauvage" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rncfs.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve naturelle (Nouvelle-Calédonie)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-nc-rn.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve naturelle (Nouvelle-Calédonie, Province Sud)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncs-rn.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve naturelle de la collectivité territoriale de Corse" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rnctc.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve naturelle intégrale (Nouvelle-Calédonie, Province Nord)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncn-rni.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve naturelle intégrale (Nouvelle-Calédonie, Province Sud)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncs-rni.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve naturelle intégrale (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-rni.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Réserve naturelle intégrale saisonnière (Nouvelle-Calédonie, Province Sud)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncs-rnis.geojson', {
+  "Domaine public maritime attribué (Conservatoire du littoral)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-cl-dpma.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
   "Réserve naturelle nationale" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rnn.geojson', {
@@ -221,19 +119,97 @@ var overlays = {
   "Réserve naturelle régionale" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rnr.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
-  "Réserve naturelle saisonnière (Nouvelle-Calédonie, Province Sud)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncs-rns.geojson', {
+  "Aire de protection de biotope" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-apb.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Zone spéciale de conservation (N2000, DHFF)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-zsc.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
   "Site d'importance communautaire (N2000, DHFF)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-sic.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Zone de protection spéciale (N2000, DO)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-zps.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Parc naturel marin" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pnm.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Bien inscrit sur la liste du patrimoine mondial" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-bipm.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Bien inscrit sur la liste du patrimoine mondial (zone coeur)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-bipm-c.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Bien inscrit sur la liste du patrimoine mondial (zone tampon)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-bipm-t.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Zone humide d'importance internationale (Ramsar)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ramsar.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Aire spécialement protégée d'importance méditerranéenne" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-aspim.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Zone marine protégée de la convention OSPAR" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ospar.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Zone protégée de la convention d'Apia" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-apia.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Zone spécialement protégée de l'Antarctique" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-antarctique.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Zone spécialement protégée de la convention de Carthagène" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-carthagene.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve de biosphère" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rb.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve de biosphère (zone centrale)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rb-c.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve de biosphère (zone de transition)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rb-tr.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve de biosphère (zone tampon)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rb-ta.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve nationale de chasse et de faune sauvage" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rncfs.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve naturelle de la collectivité territoriale de Corse" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rnctc.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Aire de gestion des habitats ou des espèces (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-aghe.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Aire de repos des cétacés de plan de gestion de l'espace maritime (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-arcpgem.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Aire marine protégée de plan de gestion de l'espace maritime (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-amppgem.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Aire protégée de ressources naturelles gérées (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-aprng.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Monument naturel (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-mn.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Paysage naturel protégé (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-pnp.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Plan de gestion de l'espace maritime (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-pgem.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Périmètre de protection de réserve naturelle intégrale (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-pprni.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve naturelle intégrale (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-rni.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
   "Zone de mouillage de plan de gestion de l'espace maritime (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-zmpgem.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
   "Zone de nature sauvage (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-zns.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Zone de protection spéciale (N2000, DO)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-zps.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
   "Zone de pêche aux Ature de plan de gestion de l'espace maritime (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-zpapgem.geojson', {
@@ -248,31 +224,52 @@ var overlays = {
   "Zone de stationnement des paquebots de plan de gestion de l'espace maritime (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-zsppgem.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
-  "Zone humide d'importance internationale (Ramsar)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ramsar.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Zone marine protégée de la convention OSPAR" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ospar.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
   "Zone naturelle protégée de plan de gestion de l'espace maritime (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-znppgem.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Zone protégée de la convention d'Apia" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-apia.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
   "Zone réglementée de pêche de plan de gestion de l'espace maritime (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-zrppgem.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
-  "Zone spéciale de conservation (N2000, DHFF)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-zsc.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Zone spécialement protégée de l'Antarctique" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-antarctique.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Zone spécialement protégée de la convention de Carthagène" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-carthagene.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
   "Zone touristique de plan de gestion de l'espace maritime (Polynésie française)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pf-ztpgem.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Aire de gestion durable des ressources (Nouvelle-Calédonie, Province Nord)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pfn-agdr.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Aire de gestion durable des ressources (Nouvelle-Calédonie, Province Sud)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pfs-agdr.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Parc naturel (Nouvelle-Calédonie)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-nc-pn.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Parc provincial (Nouvelle-Calédonie, Province Nord)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncn-pp.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Parc provincial (Nouvelle-Calédonie, Province Sud)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncs-pp.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve de nature sauvage (Nouvelle-Calédonie, Province Nord)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncn-rns.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve intégrale (Nouvelle-Calédonie)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-nc-ri.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve naturelle (Nouvelle-Calédonie)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-nc-rn.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve naturelle (Nouvelle-Calédonie, Province Sud)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncs-rn.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve naturelle intégrale (Nouvelle-Calédonie, Province Nord)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncn-rni.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve naturelle intégrale (Nouvelle-Calédonie, Province Sud)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncs-rni.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve naturelle intégrale saisonnière (Nouvelle-Calédonie, Province Sud)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncs-rnis.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
+  "Réserve naturelle saisonnière (Nouvelle-Calédonie, Province Sud)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-ncs-rns.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   })
 };
