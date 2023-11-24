@@ -60,10 +60,10 @@ var onEachFeatureZee = function (feature, layer) {
 // affichage des caractéristiques de chaque feature de Amp
 var onEachFeatureAmp = function (feature, layer) {
   layer.bindPopup(
-    '<b>ZEE simplifiées</b><br>'
+    '<b>Amp</b><br>'
     +'<pre>'+JSON.stringify(feature.properties,null,' ')+'</pre>'
   );
-  layer.bindTooltip(feature.properties.title);
+  layer.bindTooltip(feature.properties.nom);
 }
 
 var baseLayers = {
