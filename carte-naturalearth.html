@@ -62,7 +62,7 @@ var baseLayers = {
   ),
   "Natural Earth II with Shaded Relief, Water, and Drainages - NE2_HR_LC_SR_W_DR" : new L.TileLayer(
       'https://maps.ecere.com/geoapi/collections/NaturalEarth/raster/NE2_HR_LC_SR_W_DR/tiles/WebMercatorQuad/{z}/{x}/{y}.jpg',
-      { "format":"image/jpeg","minZoom":0,"maxZoom":19,"detectRetina":false,
+      { "format":"image/jpeg","tms":true,"minZoom":0,"maxZoom":19,"detectRetina":false,
         attribution: '&copy; <a href="https://www.naturalearthdata.com/">Natural Earth</a>'}
   ),
   "OSM" : new L.TileLayer(
