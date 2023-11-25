@@ -93,9 +93,9 @@ var overlays = {
     { "minZoom":0,"maxZoom":19,"detectRetina":false,
       attribution: '&copy; <a href="https://www.naturalearthdata.com/">Natural Earth</a>'}
   ),
-  "Natural Earth - Bathymetry" : new L.TileLayer(
-    'https://maps.ecere.com/geoapi/collections/NaturalEarth/physical/bathymetry/tiles/WebMercatorQuad/{z}/{y}/{x}.png',
-    { "format":"image/png","minZoom":0,"maxZoom":19,"detectRetina":false,
+  "Natural Earth - Bathymetry" : new L.vectorGrid.protobuf(
+    'https://maps.ecere.com/geoapi/collections/NaturalEarth/physical/bathymetry/tiles/WebMercatorQuad/{z}/{y}/{x}.mvt',
+    { "minZoom":0,"maxZoom":19,"detectRetina":false,
       attribution: '&copy; <a href="https://www.naturalearthdata.com/">Natural Earth</a>'}
   )
 };
