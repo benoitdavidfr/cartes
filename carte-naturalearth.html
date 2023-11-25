@@ -86,10 +86,11 @@ var overlays = {
   "ZEE simplifiée" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/frzee.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureZee
   }),
-  "Natural Earth - Coastline" : new L.TileLayer(
-    'https://maps.ecere.com/geoapi/collections/NaturalEarth/physical/ne_10m_coastline/tiles/WebMercatorQuad/{z}/{y}/{x}.png',
+  "Natural Earth - Coastline" : new L.vectorGrid.protobuf(
+    'https://maps.ecere.com/geoapi/collections/NaturalEarth/physical/ne_10m_coastline/tiles/WebMercatorQuad/{z}/{y}/{x}.mvt',
     { "format":"image/png","minZoom":0,"maxZoom":19,"detectRetina":false,
       attribution: '&copy; <a href="https://www.naturalearthdata.com/">Natural Earth</a>'}
+    var url = 'https://d2munx5tg0hw47.cloudfront.net/tiles/{z}/{x}/{y}.mapbox';
   ),
   "Natural Earth - Bathymetry" : new L.TileLayer(
     'https://maps.ecere.com/geoapi/collections/NaturalEarth/physical/bathymetry/tiles/WebMercatorQuad/{z}/{y}/{x}.png',
