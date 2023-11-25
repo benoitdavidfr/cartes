@@ -1,6 +1,7 @@
 # cartes - Diverses cartes
 
 * [carte ShomGT (carte-shomgt.html)](https://benoitdavidfr.github.io/cartes/carte-shomgt.html)
+* [carte Natural Earth (carte-shomgt.html)](https://benoitdavidfr.github.io/cartes/carte-naturalearth.html)
 * [carte AMP (carte-amp.html)](https://benoitdavidfr.github.io/cartes/carte-amp.html)
 * [carte sgpp (carte-sgpp.html)](https://benoitdavidfr.github.io/cartes/carte-sgpp.html)
 * [carte avec couches INPN (carte-inpn.html)](https://benoitdavidfr.github.io/cartes/carte-inpn.html)
