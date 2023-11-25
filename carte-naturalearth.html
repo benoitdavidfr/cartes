@@ -19,6 +19,8 @@
     <script src="leaflet/leaflet.uGeoJSON.js"></script>
 <!-- plug-in d'appel des GeoJSON en AJAX -->
     <script src='leaflet/leaflet-ajax.js'></script>
+<!-- leaflet.vectorgrid -->
+    <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.js"></script>
   </head>
   <body>
     <div id="map" style="height: 100%; width: 100%"></div>
@@ -88,7 +90,7 @@ var overlays = {
   }),
   "Natural Earth - Coastline" : new L.vectorGrid.protobuf(
     'https://maps.ecere.com/geoapi/collections/NaturalEarth/physical/ne_10m_coastline/tiles/WebMercatorQuad/{z}/{y}/{x}.mvt',
-    { "format":"image/png","minZoom":0,"maxZoom":19,"detectRetina":false,
+    { "minZoom":0,"maxZoom":19,"detectRetina":false,
       attribution: '&copy; <a href="https://www.naturalearthdata.com/">Natural Earth</a>'}
   ),
   "Natural Earth - Bathymetry" : new L.TileLayer(
