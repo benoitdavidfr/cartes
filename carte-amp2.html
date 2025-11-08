@@ -30,6 +30,9 @@ L.control.scale({position:'bottomleft', metric:true, imperial:false}).addTo(map)
 var wmtsurl = 'https://wxs.ign.fr/pratique/geoportail/wmts?'
             + 'service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&'
             + 'tilematrix={z}&tilecol={x}&tilerow={y}';
+var ampwfs = 'https://wxs.ofb.fr/geoserver/gestion/ows?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature'
+            +'&typeNames=gestion:ges_omon_amp_ofb_pol_3857_vue&srsName=EPSG:4326&outputFormat=json'
+            +'&cql_filter=des_id=';
 var detectRetina = true;
 var attrIGN = "&copy; <a href='http://www.ign.fr'>IGN</a>";
 var attrINPN = "&copy; <a href='http://inpn.mnhn.fr'>INPN</a>";
@@ -88,7 +91,10 @@ var overlays = {
   "ZEE simplifiée" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/frzee.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureZee
   }),
- 
+      
+  "Aire de protection de biotope" : new L.GeoJSON.AJAX(ampwfs+'1', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
+  }),
   "Parc national" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-pn.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
@@ -117,9 +123,6 @@ var overlays = {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
   "Réserve naturelle régionale" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-rnr.geojson', {
-    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
-  }),
-  "Aire de protection de biotope" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-apb.geojson', {
     style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureAmp
   }),
   "Zone spéciale de conservation (N2000, DHFF)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/amp/amp-zsc.geojson', {
