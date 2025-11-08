@@ -7,8 +7,8 @@
 <!-- styles nécessaires pour le mobile -->
     <!-- <link rel="stylesheet" href="https://visu.gexplor.fr/viewer.css"> -->
 <!-- styles et src de Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   </head>
   <body>
     <div id="map" style="height: 100%; width: 100%"></div>
@@ -35,25 +35,9 @@ var baseLayers = {
   )
 };
       
-map.addLayer(baseLayers["Plan IGN"]);
+map.addLayer(baseLayers["OSM"]);
 
 var overlays = {
-  "Ortho D90 WMTS" : new L.TileLayer(
-      wmtsurl + '&layer=318602_BDORTHO_PYR-JPG_PM_D090_2020_WL&format=image/jpeg&style=normal',
-      {"format":"image/jpeg","minZoom":0,"maxZoom":20,"detectRetina":detectRetina,"attribution":attrIGN}
-  ),
-  "Ortho D69 WMTS" : new L.TileLayer(
-      wmtsurl + '&layer=321715_BDORTHO_PYR-JPG_PM_D069_2020&format=image/jpeg&style=normal',
-      {"format":"image/jpeg","minZoom":0,"maxZoom":20,"detectRetina":detectRetina,"attribution":attrIGN}
-  ),
-  "Ortho D90 WMS" : new L.tileLayer.wms('https://wms-r.geopf.fr/rok4/wms?',
-  { "version":"1.3.0","layers":"318602_BDORTHO_PYR-JPG_PM_D090_2020_WL","format":"image/jpeg","transparent":true,
-    "detectRetina":detectRetina, "attribution":attrIGN }
-  ),
-  "Ortho D69 WMS" : new L.tileLayer.wms('https://wms-r.geopf.fr/rok4/wms?',
-  { "version":"1.3.0","layers":"321715_BDORTHO_PYR-JPG_PM_D069_2020","format":"image/jpeg",
-    "detectRetina":detectRetina, "attribution":attrIGN }
-  )
 };
 
 <!-- ajout de l outil de sélection de couche -->
