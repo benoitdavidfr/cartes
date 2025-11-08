@@ -15,8 +15,8 @@
     <script>
 var map = L.map('map').setView([48, 3], 8); // view pour la zone
 L.control.scale({position:'bottomleft', metric:true, imperial:false}).addTo(map);
-
-var wmtsurl = 'https://wmts.geopf.fr/rok4/wmts?'
+      
+var wmtsurl = 'https://data.geopf.fr/wmts?'
             + 'service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&'
             + 'tilematrix={z}&tilecol={x}&tilerow={y}';
 var detectRetina = true;
