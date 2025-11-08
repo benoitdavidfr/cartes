@@ -3,7 +3,7 @@
 * [carte ShomGT (carte-shomgt.html)](https://benoitdavidfr.github.io/cartes/carte-shomgt.html)
 * [carte Natural Earth (carte-naturalearth.html)](https://benoitdavidfr.github.io/cartes/carte-naturalearth.html)
 * [carte AMP (carte-amp.html)](https://benoitdavidfr.github.io/cartes/carte-amp.html)
-* [carte AMP2 (carte-amp2.html)](https://benoitdavidfr.github.io/cartes/carte-amp2.html)
+* [carte des Aires Maritimes Protégées utilisant le serveur WFS de l'OFB (carte-ampofb.html)](https://benoitdavidfr.github.io/cartes/carte-amp2.html)
 * [carte sgpp (carte-sgpp.html)](https://benoitdavidfr.github.io/cartes/carte-sgpp.html)
 * [carte avec couches INPN (carte-inpn.html)](https://benoitdavidfr.github.io/cartes/carte-inpn.html)
 * [carte de test GPF au 10/7/2023 (carte-gpf.html)](https://benoitdavidfr.github.io/cartes/carte-gpf.html)
