@@ -1,44 +1,130 @@
-<!DOCTYPE html>
-  <head>
-    <title>carte GPF</title>
-    <meta charset="UTF-8">
-<!-- meta nécessaire pour le mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<!-- styles nécessaires pour le mobile -->
-    <!-- <link rel="stylesheet" href="https://visu.gexplor.fr/viewer.css"> -->
-<!-- styles et src de Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0/dist/leaflet.css" />
+<html>
+<head>
+  <title>carte GPF WMTS</title>
+  <meta charset="UTF-8">
+  <!-- meta nécessaire pour le mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- styles nécessaires pour le mobile -->
+  <link rel="stylesheet" href="https://benoitdavidfr.github.io/cartes/leaflet/viewer.css">
+  <!-- styles et src de Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  </head>
+  <!-- Include the edgebuffer plugin -->
+    <script src="https://cdn.jsdelivr.net/gh/TolonUK/Leaflet.EdgeBuffer@refs/heads/main/src/leaflet.edgebuffer.js"></script>
+  <!-- Include the Control.Coordinates plugin -->
+  <link rel='stylesheet' href='https://benoitdavidfr.github.io/cartes/leaflet/Control.Coordinates.css'>
+    <script src='https://benoitdavidfr.github.io/cartes/leaflet/Control.Coordinates.js'></script>
+  <!-- plug-in d'appel des GeoJSON en AJAX -->
+    <script src='https://benoitdavidfr.github.io/cartes/leaflet/leaflet-ajax.js'></script>
+</head>
   <body>
     <div id="map" style="height: 100%; width: 100%"></div>
     <script>
-var map = L.map('map').setView([48, 3], 8); // view pour la zone
+var map = L.map('map').setView([48, 3], 6); // view pour la zone
 L.control.scale({position:'bottomleft', metric:true, imperial:false}).addTo(map);
-      
-var wmtsurl = 'https://data.geopf.fr/wmts?'
-            + 'service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&'
-            + 'tilematrix={z}&tilecol={x}&tilerow={y}';
-var detectRetina = true;
+
+// activation du plug-in Control.Coordinates
+
+var gpfWmtsUrl = 'https://data.geopf.fr/wmts?&REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0'
+                + '&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}';
+var shomgturl = 'https://geoapi.fr/shomgt/view/';
+var ampwfs = 'https://wxs.ofb.fr/geoserver/gestion/ows?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature'
+            +'&typeNames=gestion:ges_omon_amp_ofb_pol_3857_vue&srsName=EPSG:4326&outputFormat=json'
+            +'&cql_filter=des_id=';
 var attrIGN = "&copy; <a href='http://www.ign.fr'>IGN</a>";
 var attrINPN = "&copy; <a href='http://inpn.mnhn.fr'>INPN</a>";
 
+// affichage des caractéristiques des limites maritimes
+var onEachFeatureDelmar = function (feature, layer) {
+  var popupContent = '<b>Délimitations maritimes, source Shom, 2022 (extrait WFS)</b><br><table>';
+  popupContent += '<tr><td>type</td><td>'+feature.properties.type+"</td></tr>\n";
+  popupContent += '<tr><td>nature</td><td>'+feature.properties.nature+"</td></tr>\n";
+  popupContent += '<tr><td>description</td><td>'+feature.properties.description+"</td></tr>\n";
+  popupContent += '<tr><td>reference</td><td>'+feature.properties.reference+"</td></tr>\n";
+  popupContent += '<tr><td>layerName</td><td>'+feature.properties.layerName+"</td></tr>\n";
+  popupContent += '<tr><td>inspireId</td><td>'+feature.properties.inspireId+"</td></tr>\n";
+  popupContent += "</table>\n";
+  layer.bindPopup(popupContent, {maxWidth: 600});
+  layer.bindTooltip(feature.properties.type);
+}
+
+// affichage des caractéristiques de chaque polygone de ZEE
+var onEachFeatureZee = function (feature, layer) {
+  layer.bindPopup(
+    '<b>ZEE simplifiées</b><br>'
+    +'<pre>'+JSON.stringify(feature.properties,null,' ')+'</pre>'
+  );
+  layer.bindTooltip(feature.properties.title);
+}
+
 var baseLayers = {
-  /*"Plan IGN" : new L.TileLayer(
-      wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&format=image/png&style=normal',
-      {"format":"image/png","minZoom":0,"maxZoom":18,"detectRetina":false,"attribution":attrIGN}
-  ),*/
-  "OSM" : new L.TileLayer(
-      'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-      { "format":"image/jpeg","minZoom":0,"maxZoom":19,"detectRetina":detectRetina,
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}
-  )
+  "Plan IGN": L.tileLayer(gpfWmtsUrl+'&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png',
+    { minZoom: 0, maxZoom: 18, attribution: "IGN-F", tileSize: 256}),
+  "Carte Shom": new L.TileLayer(
+    'https://geoapi.fr/shomgt/tile.php/gtpyr/{z}/{x}/{y}.png',
+    { "format":"image/png","minZoom":0,"maxZoom":19,"detectRetina":false,
+      attribution: '&copy; <a href="http://www.shom.fr/">Shom</a>'}
+  ),
+  "OpenStreetMap": new L.TileLayer(
+    'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
+    { "format":"image/png","minZoom":0,"maxZoom":19,"detectRetina":true,
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}
+  ),
+  "Ortho": L.tileLayer(gpfWmtsUrl + '&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/jpeg',
+    { minZoom: 0, maxZoom: 18, attribution: "IGN-F", tileSize: 256}),
+  "OrthoHR": L.tileLayer(gpfWmtsUrl + '&LAYER=HR.ORTHOIMAGERY.ORTHOPHOTOS&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/jpeg',
+    { minZoom: 6, maxZoom: 19, attribution: "IGN-F", tileSize: 256}),
+  "Plan IGN J+1": L.tileLayer(
+    gpfWmtsUrl+'&LAYER=GEOGRAPHICALGRIDSYSTEMS.MAPS.BDUNI.J1&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png',
+    { minZoom: 0, maxZoom: 18, attribution: "IGN-F", tileSize: 256}),
+  "Natural Earth": L.tileLayer(
+    gpfWmtsUrl+'&LAYER=CARTES.NATURALEARTH&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/jpeg',
+    { minZoom: 0, maxZoom: 9, attribution: "Natural Earth", tileSize: 256}),
+  "Carte de Cassini": L.tileLayer(
+    gpfWmtsUrl+'&LAYER=BNF-IGNF_GEOGRAPHICALGRIDSYSTEMS.CASSINI&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png',
+    { minZoom: 6, maxZoom: 14, attribution: "BNF", tileSize: 256})
 };
-      
-map.addLayer(baseLayers["OSM"]);
+
+map.addLayer(baseLayers["Plan IGN"]);
 
 var overlays = {
+  "Délim. maritimes (Shom)" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/delmar.geojson', {
+    style: { color: 'SteelBlue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureDelmar
+  }),
+  "ZEE simplifiée" : new L.GeoJSON.AJAX(shomgturl+'geojson.php/frzee.geojson', {
+    style: { color: 'blue'}, minZoom: 0, maxZoom: 18, onEachFeature: onEachFeatureZee
+  }),
+  "AdminExpress COG" : L.tileLayer(gpfWmtsUrl+'&LAYER=ADMINEXPRESS-COG.LATEST&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png',
+    { minZoom: 6, maxZoom: 16, attribution : "IGN-F", tileSize : 256}),
+  "Parcellaire" : L.tileLayer(
+    gpfWmtsUrl+'&LAYER=CADASTRALPARCELS.PARCELLAIRE_EXPRESS&STYLE=PCI%20vecteur&TILEMATRIXSET=PM&FORMAT=image/png',
+    { minZoom: 0, maxZoom: 19, attribution : "IGN-F", tileSize : 256}),
+  "Estompage" : L.tileLayer(
+    gpfWmtsUrl+'&LAYER=ELEVATION.ELEVATIONGRIDCOVERAGE.SHADOW&STYLE=estompage_grayscale&TILEMATRIXSET=PM&FORMAT=image/png',
+    { minZoom: 0, maxZoom: 15, attribution : "IGN-F", tileSize : 256}),
+  "BDTopoV3-Batiments" : L.tileLayer(
+    gpfWmtsUrl+'&LAYER=BUILDINGS.BUILDINGS&STYLE=BUILDINGS.BUILDINGS&TILEMATRIXSET=PM&FORMAT=image/png',
+    { minZoom: 6, maxZoom: 18, attribution : "IGN-F", tileSize : 256}),
+  "BDTopoV3-Hydro" : L.tileLayer(
+    gpfWmtsUrl+'&LAYER=HYDROGRAPHY.HYDROGRAPHY&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png',
+    { minZoom: 6, maxZoom: 18, attribution : "IGN-F", tileSize : 256}),
+  "BDTopoV3-R.ferré" : L.tileLayer(
+    gpfWmtsUrl+'&LAYER=TRANSPORTNETWORKS.RAILWAYS&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png',
+    { minZoom: 6, maxZoom: 18, attribution : "IGN-F", tileSize : 256}),
+  "BDTopoV3-R.routier" : L.tileLayer(
+    gpfWmtsUrl+'&LAYER=TRANSPORTNETWORKS.ROADS&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png',
+    { minZoom: 6, maxZoom: 18, attribution : "IGN-F", tileSize : 256}),
+  "BDTopoV3-Aéroports" : L.tileLayer(
+    gpfWmtsUrl+'&LAYER=TRANSPORTNETWORKS.RUNWAYS&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png',
+    { minZoom: 6, maxZoom: 18, attribution : "IGN-F", tileSize : 256}),
+  "BDTopoV3-R.électrique" : L.tileLayer(
+    gpfWmtsUrl+'&LAYER=UTILITYANDGOVERNMENTALSERVICES.ALL&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png',
+    { minZoom: 10, maxZoom: 18, attribution : "IGN-F", tileSize : 256}),
+    "BDTopoV3-Toponymie" : L.tileLayer(
+      gpfWmtsUrl+'&LAYER=GEOGRAPHICALNAMES.NAMES&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png',
+      { minZoom: 6, maxZoom: 18, attribution : "IGN-F", tileSize : 256})
 };
+
 
 <!-- ajout de l outil de sélection de couche -->
 L.control.layers(baseLayers, overlays).addTo(map);
