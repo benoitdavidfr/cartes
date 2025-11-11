@@ -72,6 +72,12 @@ var baseLayers = {
       { "format":"image/png","minZoom":0,"maxZoom":19,"detectRetina":false,
         attribution: '&copy; <a href="http://www.shom.fr/">Shom</a>'}
   ),
+  "Carte littorale" : new L.TileLayer(
+      wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.COASTALMAPS&format=image/png&style=normal',
+      { "format":"image/png","minZoom":0,"maxZoom":18,"detectRetina":false,
+        "attribution":"&copy; <a href='http://www.ign.fr'>IGN</a> &copy; <a href='http://www.shom.fr/'>Shom</a>"
+      }
+  ),
   "OSM" : new L.TileLayer(
       'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
       { "format":"image/png","minZoom":0,"maxZoom":19,"detectRetina":detectRetina,
