@@ -65,7 +65,7 @@ var onEachFeatureAmp = function (feature, layer) {
     '<b>Amp</b><br>'
     +'<pre>'+JSON.stringify(feature.properties,null,' ')+'</pre>'
   );
-  layer.bindTooltip(feature.properties.nom);
+  layer.bindTooltip(feature.properties.mpa_oriname);
 }
 
 var baseLayers = {
